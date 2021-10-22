@@ -23,6 +23,7 @@ app.get('/users', async (req, res) => {
 })
 
 app.post('/users', async (req, res) => {
+    console.log('Creating a new user', req.body);
     const newUser = await User.create({ ...req.body });
     return res.json(newUser);
 })
